@@ -58,13 +58,9 @@ foreach ($aDirectories as $dir) {
         $sFile = substr($filepath, strrpos($filepath, '/') + 1);
         echo $sFile . "<br><br><br>";
 
-        if(strpos($sFile, 'OLD')) continue;     // no old file import
-        if($sFile == "latest.csv"){             // current file
-
-        } else{                                 // old files in dir
-            $sDate = strtok($sFile, '.csv');
-            echo "Date: " . $sDate . "<br>";
-        }
+        $sDate = strtok($sFile, '.csv');
+        echo "Date: " . $sDate . "<br>";
+        
         $aCsvData = file($filepath);
         $i=0;
 
